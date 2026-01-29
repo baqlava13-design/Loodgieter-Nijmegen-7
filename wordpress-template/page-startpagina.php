@@ -1,0 +1,951 @@
+<?php
+/**
+ * Template Name: Startpagina Landing
+ * Template Post Type: page
+ * 
+ * Custom landing page template for Loodgieter Nijmegen Spoed
+ * Upload this file to your WordPress theme folder (wp-content/themes/your-theme/)
+ */
+
+get_header();
+?>
+
+<style>
+:root {
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --accent: #e0f2fe;
+  --accent-foreground: #0c4a6e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.lns-landing {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--foreground);
+  line-height: 1.6;
+}
+
+.lns-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.lns-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.lns-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 1rem;
+}
+
+.lns-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.lns-logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lns-logo-icon svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.lns-logo-text {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.lns-nav {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .lns-nav {
+    display: flex;
+  }
+}
+
+.lns-nav a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.lns-nav a:hover {
+  opacity: 0.7;
+}
+
+.lns-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.lns-btn:hover {
+  opacity: 0.9;
+}
+
+.lns-btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.lns-btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+/* Hero Section */
+.lns-hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.05) 0%, var(--background) 50%, rgba(224, 242, 254, 0.1) 100%);
+}
+
+.lns-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(8, 145, 178, 0.1), transparent, transparent);
+}
+
+.lns-hero-blob-1 {
+  position: absolute;
+  top: 5rem;
+  right: 2.5rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(8, 145, 178, 0.05);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.lns-hero-blob-2 {
+  position: absolute;
+  bottom: 5rem;
+  left: 2.5rem;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(224, 242, 254, 0.1);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.lns-hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.lns-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(8, 145, 178, 0.1);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.lns-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .lns-hero h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lns-hero h1 {
+    font-size: 3.75rem;
+  }
+}
+
+.lns-hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
+  line-height: 1.75;
+}
+
+@media (min-width: 640px) {
+  .lns-hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+.lns-hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .lns-hero-buttons {
+    flex-direction: row;
+  }
+}
+
+.lns-hero-buttons .lns-btn {
+  min-width: 200px;
+}
+
+.lns-trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.5);
+  flex-wrap: wrap;
+}
+
+.lns-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.lns-trust-badge svg {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+}
+
+/* About Section */
+.lns-about {
+  padding: 5rem 0;
+  background: var(--card);
+}
+
+.lns-section-center {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lns-section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .lns-section-title {
+    font-size: 2.25rem;
+  }
+}
+
+.lns-section-text {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  line-height: 1.75;
+}
+
+/* Services Section */
+.lns-services {
+  padding: 5rem 0;
+}
+
+.lns-section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.lns-section-header p {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.lns-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .lns-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lns-services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.lns-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.lns-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.lns-card-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  background: rgba(8, 145, 178, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lns-card-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--primary);
+}
+
+.lns-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.lns-card p {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+/* Features Section */
+.lns-features {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, var(--card), var(--background));
+}
+
+.lns-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .lns-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.lns-feature-card {
+  position: relative;
+  padding: 2rem;
+  background: var(--card);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  border-radius: 16px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.lns-feature-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.lns-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  width: 5rem;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), rgba(8, 145, 178, 0.5));
+  border-radius: 9999px;
+}
+
+.lns-feature-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.25rem;
+  background: rgba(8, 145, 178, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lns-feature-icon svg {
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
+}
+
+.lns-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.lns-feature-card p {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.lns-contact {
+  padding: 5rem 0;
+  background: rgba(241, 245, 249, 0.3);
+}
+
+.lns-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .lns-contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lns-form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.lns-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.lns-form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.lns-form-label .required {
+  color: #ef4444;
+}
+
+.lns-form-input,
+.lns-form-textarea {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background: var(--background);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.lns-form-input:focus,
+.lns-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+}
+
+.lns-form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.lns-form-btn {
+  width: 100%;
+}
+
+.lns-contact-image {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.lns-contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lns-contact-info {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.lns-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--card);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  border-radius: 12px;
+}
+
+.lns-contact-item-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(8, 145, 178, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lns-contact-item-icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+}
+
+.lns-contact-item-label {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.lns-contact-item-value {
+  font-weight: 600;
+}
+
+/* Footer */
+.lns-footer {
+  padding: 3rem 0;
+  background: var(--card);
+  border-top: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.lns-footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .lns-footer-inner {
+    flex-direction: row;
+  }
+}
+
+.lns-footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lns-footer-logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lns-footer-logo-icon svg {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+.lns-footer-text {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+
+/* SVG Icons */
+.icon-droplet {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+</style>
+
+<div class="lns-landing">
+  <!-- Header -->
+  <header class="lns-header">
+    <div class="lns-container">
+      <div class="lns-header-inner">
+        <a href="<?php echo home_url(); ?>" class="lns-logo">
+          <div class="lns-logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <span class="lns-logo-text">Loodgieter Nijmegen</span>
+        </a>
+        
+        <nav class="lns-nav">
+          <a href="#over">Over Ons</a>
+          <a href="#diensten">Diensten</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        
+        <a href="tel:024-1234567" class="lns-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          Bel Nu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="lns-hero">
+    <div class="lns-hero-bg"></div>
+    <div class="lns-hero-blob-1"></div>
+    <div class="lns-hero-blob-2"></div>
+    
+    <div class="lns-container">
+      <div class="lns-hero-content">
+        <div class="lns-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>24/7 Spoedservice Beschikbaar</span>
+        </div>
+        
+        <h1>Expert Loodgieterservice in Nijmegen en Omgeving</h1>
+        
+        <p class="lns-hero-subtitle">Met 30 jaar ervaring bieden wij snelle en betrouwbare oplossingen voor lekkages, verwarmingsproblemen en verstoppingen. Onze spoedservice staat dag en nacht voor u klaar met hoogwaardig vakwerk.</p>
+        
+        <div class="lns-hero-buttons">
+          <a href="tel:024-1234567" class="lns-btn lns-btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Bel Direct
+          </a>
+          <a href="#diensten" class="lns-btn lns-btn-lg lns-btn-outline">
+            Onze Diensten
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="lns-trust-badges">
+          <div class="lns-trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Gecertificeerd</span>
+          </div>
+          <div class="lns-trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"/>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+            </svg>
+            <span>30+ Jaar Ervaring</span>
+          </div>
+          <div class="lns-trust-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>1000+ Klanten</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="lns-about" id="over">
+    <div class="lns-container">
+      <div class="lns-section-center">
+        <h2 class="lns-section-title">Snelle en Betrouwbare Loodgietersservice in Nijmegen</h2>
+        <p class="lns-section-text">Loodgieter Nijmegen Spoed staat voor snelle, deskundige service met 30 jaar ervaring. Wij streven ernaar om elk loodgietersprobleem vakkundig en efficiënt op te lossen, zodat u snel weer zorgeloos kunt genieten van uw woning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="lns-services" id="diensten">
+    <div class="lns-container">
+      <div class="lns-section-header">
+        <h2 class="lns-section-title">Loodgieter Nijmegen Spoed met 30 jaar ervaring</h2>
+        <p>Wij bieden snelle en betrouwbare loodgietersdiensten, van lekkage herstel tot cv-ketel reparatie en ontstoppingen.</p>
+      </div>
+      
+      <div class="lns-services-grid">
+        <div class="lns-card">
+          <div class="lns-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <h3>Lekkage oplossen</h3>
+          <p>Wij verhelpen lekkages snel en efficiënt om verdere schade te voorkomen.</p>
+        </div>
+        
+        <div class="lns-card">
+          <div class="lns-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>
+            </svg>
+          </div>
+          <h3>CV-ketel onderhoud</h3>
+          <p>Professioneel onderhoud en reparaties van uw verwarmingssysteem voor optimaal comfort.</p>
+        </div>
+        
+        <div class="lns-card">
+          <div class="lns-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m2 22 1-1h3l9-9"/>
+              <path d="M3 21v-3l9-9"/>
+              <path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z"/>
+            </svg>
+          </div>
+          <h3>Verstoppingen verhelpen</h3>
+          <p>Snelle en grondige ontstoppingsservice voor afvoeren en rioleringen.</p>
+        </div>
+        
+        <div class="lns-card">
+          <div class="lns-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Spoedservice</h3>
+          <p>24/7 beschikbaar voor noodsituaties met directe en deskundige hulp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="lns-features" id="features">
+    <div class="lns-container">
+      <div class="lns-section-header">
+        <h2 class="lns-section-title">Betrouwbare Loodgietersdienst in Nijmegen</h2>
+        <p>Met meer dan 30 jaar ervaring bieden wij snelle en vakkundige oplossingen voor lekkages, cv-werk en verstoppingen in Nijmegen en omgeving.</p>
+      </div>
+      
+      <div class="lns-features-grid">
+        <div class="lns-feature-card">
+          <div class="lns-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3>Spoedservice 24/7</h3>
+          <p>Onze specialisten zijn direct beschikbaar voor dringende loodgietersproblemen, dag en nacht.</p>
+        </div>
+        
+        <div class="lns-feature-card">
+          <div class="lns-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+            </svg>
+          </div>
+          <h3>Verwarming & CV Onderhoud</h3>
+          <p>Wij zorgen dat uw verwarmingssysteem efficiënt en storingsvrij blijft werken.</p>
+        </div>
+        
+        <div class="lns-feature-card">
+          <div class="lns-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h3>Lekkage Opsporing</h3>
+          <p>Professionele detectie en reparatie van lekkages om verdere schade te voorkomen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="lns-contact" id="contact">
+    <div class="lns-container">
+      <div class="lns-section-header">
+        <h2 class="lns-section-title">Loodgieter Nijmegen Spoed: Direct en Deskundig</h2>
+        <p>Plan eenvoudig uw spoedklus met ons, vermeld uw probleem en wij zorgen voor snelle, professionele hulp zonder vertraging.</p>
+      </div>
+      
+      <div class="lns-contact-grid">
+        <div class="lns-form-card">
+          <form method="post" action="">
+            <div class="lns-form-group">
+              <label class="lns-form-label">Naam <span class="required">*</span></label>
+              <input type="text" class="lns-form-input" name="name" placeholder="Uw naam" required>
+            </div>
+            
+            <div class="lns-form-group">
+              <label class="lns-form-label">E-mail <span class="required">*</span></label>
+              <input type="email" class="lns-form-input" name="email" placeholder="uw@email.nl" required>
+            </div>
+            
+            <div class="lns-form-group">
+              <label class="lns-form-label">Onderwerp</label>
+              <input type="text" class="lns-form-input" name="subject" placeholder="Waar kunnen wij u mee helpen?">
+            </div>
+            
+            <div class="lns-form-group">
+              <label class="lns-form-label">Bericht <span class="required">*</span></label>
+              <textarea class="lns-form-textarea" name="message" placeholder="Beschrijf uw probleem..." required></textarea>
+            </div>
+            
+            <button type="submit" class="lns-btn lns-btn-lg lns-form-btn">Verzend</button>
+          </form>
+        </div>
+        
+        <div>
+          <div class="lns-contact-image">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/plumber.jpg" alt="Loodgieter aan het werk" onerror="this.src='https://www.loodgieternijmegen.net/wp-content/uploads/2026/01/e44d4acab43039f35801b02933578ea9c43e4baf.jpg'">
+          </div>
+          
+          <div class="lns-contact-info">
+            <div class="lns-contact-item">
+              <div class="lns-contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="lns-contact-item-label">Bel ons direct</p>
+                <p class="lns-contact-item-value">024-123 4567</p>
+              </div>
+            </div>
+            
+            <div class="lns-contact-item">
+              <div class="lns-contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <p class="lns-contact-item-label">E-mail</p>
+                <p class="lns-contact-item-value">info@loodgieternijmegen.net</p>
+              </div>
+            </div>
+            
+            <div class="lns-contact-item">
+              <div class="lns-contact-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="lns-contact-item-label">Locatie</p>
+                <p class="lns-contact-item-value">Nijmegen en omgeving</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="lns-footer">
+    <div class="lns-container">
+      <div class="lns-footer-inner">
+        <div class="lns-footer-logo">
+          <div class="lns-footer-logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+            </svg>
+          </div>
+          <span style="font-weight: 600;">Loodgieter Nijmegen Spoed</span>
+        </div>
+        
+        <p class="lns-footer-text">30+ jaar ervaring in Nijmegen en omgeving</p>
+        
+        <p class="lns-footer-text">24/7 Beschikbaar</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<?php get_footer(); ?>
