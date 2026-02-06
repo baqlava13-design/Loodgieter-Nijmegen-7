@@ -18,6 +18,7 @@ import {
   Star
 } from "lucide-react";
 import heroImage from "@/assets/images/hero-plumber.png";
+import heroDienstenImage from "@/assets/images/hero-diensten.png";
 
 const SERVICES = [
   {
@@ -155,13 +156,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28" id="diensten">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-28" id="diensten">
+        <img
+          src={heroDienstenImage}
+          alt="Loodgietersdiensten in de regio Arnhem-Nijmegen"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white drop-shadow-lg">
               Onze Loodgietersdiensten in Arnhem-Nijmegen
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
               Van spoedklussen tot gepland onderhoud: wij bieden een compleet pakket loodgietersdiensten voor particulieren en bedrijven.
             </p>
           </div>
@@ -170,14 +178,14 @@ export default function HomePage() {
             {SERVICES.map((service, index) => (
               <Link href="/diensten" key={index}>
                 <Card 
-                  className="p-6 text-center hover-elevate transition-all duration-300 h-full cursor-pointer"
+                  className="p-6 text-center hover-elevate transition-all duration-300 h-full cursor-pointer bg-white/10 backdrop-blur-sm border-white/20"
                   data-testid={`card-service-${index}`}
                 >
-                  <div className="w-14 h-14 mx-auto mb-5 bg-primary/10 rounded-md flex items-center justify-center">
-                    <service.icon className="w-7 h-7 text-primary" />
+                  <div className="w-14 h-14 mx-auto mb-5 bg-white/15 rounded-md flex items-center justify-center">
+                    <service.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <h3 className="text-lg font-semibold mb-3 text-white">{service.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </Card>
@@ -187,7 +195,7 @@ export default function HomePage() {
           
           <div className="text-center mt-10">
             <Link href="/diensten" data-testid="link-all-services">
-              <Button variant="outline" className="gap-2">
+              <Button variant="outline" className="gap-2 bg-white/10 backdrop-blur-sm border-white/30 text-white">
                 Alle diensten bekijken
                 <ChevronRight className="w-4 h-4" />
               </Button>
