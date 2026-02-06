@@ -16,6 +16,7 @@ import {
   CheckCircle
 } from "lucide-react";
 import heroImage from "@/assets/images/hero-diensten.png";
+import bgToolsPattern from "@/assets/images/bg-tools-pattern.png";
 
 const DETAILED_SERVICES = [
   {
@@ -167,8 +168,12 @@ export default function DienstenPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 sm:py-24">
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{ backgroundImage: `url(${bgToolsPattern})`, backgroundSize: '400px 400px', backgroundRepeat: 'repeat' }}
+        />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="space-y-16">
             {DETAILED_SERVICES.map((service, index) => (
               <div 
