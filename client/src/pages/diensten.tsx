@@ -170,7 +170,7 @@ export default function DienstenPage() {
 
       <section className="relative py-16 sm:py-24">
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.12]"
           style={{ backgroundImage: `url(${bgToolsPattern})`, backgroundSize: '400px 400px', backgroundRepeat: 'repeat' }}
         />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
