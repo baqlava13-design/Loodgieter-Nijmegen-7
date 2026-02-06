@@ -20,6 +20,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import heroContactImage from "@/assets/images/hero-contact.png";
+import heroMapImage from "@/assets/images/hero-map-arnhem.png";
 
 const SERVICE_AREAS_DETAILED = [
   { name: "Nijmegen", distance: "Binnen 15 min" },
@@ -296,14 +297,21 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-16 sm:py-20">
+        <img
+          src={heroMapImage}
+          alt="Kaart van het werkgebied Arnhem-Nijmegen regio"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">
+              <h2 className="text-3xl font-bold mb-4 text-white drop-shadow-lg">
                 Werkgebied en Aanrijtijden
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-white/80 max-w-2xl mx-auto">
                 Onze loodgieters zijn actief in de gehele regio Arnhem-Nijmegen. 
                 Hieronder vindt u de gemiddelde aanrijtijden per locatie.
               </p>
@@ -313,14 +321,14 @@ export default function ContactPage() {
               {SERVICE_AREAS_DETAILED.map((area) => (
                 <div 
                   key={area.name}
-                  className="flex items-center justify-between gap-2 p-3 bg-muted/30 rounded-md"
+                  className="flex items-center justify-between gap-2 p-3 bg-white/10 backdrop-blur-sm rounded-md border border-white/15"
                   data-testid={`area-${area.name.toLowerCase()}`}
                 >
                   <div className="flex items-center gap-2">
-                    <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-                    <span className="text-sm font-medium">{area.name}</span>
+                    <MapPin className="w-3.5 h-3.5 text-white/90 flex-shrink-0" />
+                    <span className="text-sm font-medium text-white">{area.name}</span>
                   </div>
-                  <span className="text-xs text-muted-foreground whitespace-nowrap">{area.distance}</span>
+                  <span className="text-xs text-white/70 whitespace-nowrap">{area.distance}</span>
                 </div>
               ))}
             </div>
