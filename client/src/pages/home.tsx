@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import heroImage from "@/assets/images/hero-plumber.png";
 import heroDienstenImage from "@/assets/images/hero-diensten.png";
+import heroMapImage from "@/assets/images/hero-map-arnhem.png";
 
 const SERVICES = [
   {
@@ -247,13 +248,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-28">
+        <img
+          src={heroMapImage}
+          alt="Kaart van de regio Arnhem-Nijmegen, ons werkgebied in Gelderland"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white drop-shadow-lg">
               Ons Werkgebied: Regio Arnhem-Nijmegen
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
               Wij bedienen de gehele regio Arnhem-Nijmegen en omliggende gemeenten in Gelderland. 
               Snelle service, ook in uw plaats.
             </p>
@@ -264,17 +272,17 @@ export default function HomePage() {
               {SERVICE_AREAS.map((area) => (
                 <span 
                   key={area}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-card border border-border/50 rounded-md text-sm font-medium"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-md text-sm font-medium text-white"
                   data-testid={`badge-service-area-${area.toLowerCase()}`}
                 >
-                  <MapPin className="w-3.5 h-3.5 text-primary" />
+                  <MapPin className="w-3.5 h-3.5 text-white" />
                   {area}
                 </span>
               ))}
             </div>
             
-            <p className="text-center text-sm text-muted-foreground mt-6">
-              Uw plaats niet gevonden? <Link href="/contact" className="text-primary hover:underline">Neem contact op</Link> - 
+            <p className="text-center text-sm text-white/70 mt-6">
+              Uw plaats niet gevonden? <Link href="/contact" className="text-white hover:underline font-medium">Neem contact op</Link> - 
               wij helpen u graag als wij in uw regio werkzaam zijn.
             </p>
           </div>
