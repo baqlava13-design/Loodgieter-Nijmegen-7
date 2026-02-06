@@ -78,7 +78,7 @@ export default function HomePage() {
       <section className="relative min-h-[85vh] flex items-center">
         <img
           src={heroImage}
-          alt="Professionele loodgieter aan het werk in Nijmegen"
+          alt="Loodgieter Nijmegen spoed - ervaren loodgieter repareert lekkage bij spoedklus in Nijmegen, 24 uur per dag beschikbaar"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
@@ -160,7 +160,7 @@ export default function HomePage() {
       <section className="relative py-20 sm:py-28" id="diensten">
         <img
           src={heroDienstenImage}
-          alt="Loodgietersdiensten in de regio Arnhem-Nijmegen"
+          alt="Overzicht loodgietersdiensten Nijmegen - ontstopping, lekkage reparatie en CV ketel onderhoud in regio Arnhem-Nijmegen"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
@@ -251,7 +251,7 @@ export default function HomePage() {
       <section className="relative py-20 sm:py-28">
         <img
           src={heroMapImage}
-          alt="Kaart van de regio Arnhem-Nijmegen, ons werkgebied in Gelderland"
+          alt="Werkgebied loodgieter Nijmegen - serviceregio kaart Arnhem, Nijmegen, Elst, Wijchen, Bemmel en omliggende plaatsen in Gelderland"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />

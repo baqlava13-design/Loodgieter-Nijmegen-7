@@ -143,7 +143,7 @@ export default function DienstenPage() {
       <section className="relative min-h-[50vh] flex items-center">
         <img
           src={heroImage}
-          alt="Loodgietersdiensten in Nijmegen en Arnhem - professionele loodgieter aan het werk"
+          alt="Alle loodgietersdiensten Nijmegen - professionele loodgieter voert reparatie uit aan waterleiding in Arnhem-Nijmegen regio"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />

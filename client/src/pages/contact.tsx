@@ -93,7 +93,7 @@ export default function ContactPage() {
       <section className="relative min-h-[50vh] flex items-center">
         <img
           src={heroContactImage}
-          alt="Loodgietersbusje klaar voor spoedservice in Nijmegen"
+          alt="Loodgieter Nijmegen servicewagen - spoed loodgietersbusje onderweg naar klant voor snelle hulp in Nijmegen en omgeving"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
@@ -300,7 +300,7 @@ export default function ContactPage() {
       <section className="relative py-16 sm:py-20">
         <img
           src={heroMapImage}
-          alt="Kaart van het werkgebied Arnhem-Nijmegen regio"
+          alt="Werkgebied loodgieter Nijmegen - kaart met servicegebied Arnhem, Nijmegen, Elst, Wijchen, Bemmel, Druten en regio Gelderland"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
