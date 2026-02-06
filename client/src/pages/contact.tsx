@@ -19,6 +19,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import heroContactImage from "@/assets/images/hero-contact.png";
 
 const SERVICE_AREAS_DETAILED = [
   { name: "Nijmegen", distance: "Binnen 15 min" },
@@ -88,19 +89,27 @@ export default function ContactPage() {
         ]}
       />
 
-      <section className="py-16 sm:py-20 bg-gradient-to-b from-primary/5 to-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[50vh] flex items-center">
+        <img
+          src={heroContactImage}
+          alt="Loodgietersbusje klaar voor spoedservice in Nijmegen"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <nav className="text-sm text-muted-foreground mb-6" aria-label="Breadcrumb" data-testid="breadcrumb-contact">
-              <Link href="/" className="hover:opacity-70">Home</Link>
+            <nav className="text-sm text-white/70 mb-6" aria-label="Breadcrumb" data-testid="breadcrumb-contact">
+              <Link href="/" className="hover:text-white/90">Home</Link>
               <span className="mx-2">/</span>
-              <span className="text-foreground">Contact</span>
+              <span className="text-white">Contact</span>
             </nav>
             
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6" data-testid="text-contact-title">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-white drop-shadow-lg" data-testid="text-contact-title">
               Contact Opnemen met Loodgieter Nijmegen
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-white/85 leading-relaxed">
               Heeft u een loodgietersprobleem of wilt u een offerte aanvragen? 
               Bel ons direct of vul het contactformulier in. Wij reageren binnen 30 minuten.
             </p>
