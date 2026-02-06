@@ -309,11 +309,10 @@ export default function ContactPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 text-white drop-shadow-lg">
-                Werkgebied en Aanrijtijden
+                Werkgebied
               </h2>
               <p className="text-white/80 max-w-2xl mx-auto">
-                Onze loodgieters zijn actief in de gehele regio Arnhem-Nijmegen. 
-                Hieronder vindt u de gemiddelde aanrijtijden per locatie.
+                Onze loodgieters zijn actief in de gehele regio Arnhem-Nijmegen.
               </p>
             </div>
             
@@ -321,14 +320,11 @@ export default function ContactPage() {
               {SERVICE_AREAS_DETAILED.map((area) => (
                 <div 
                   key={area.name}
-                  className="flex items-center justify-between gap-2 p-3 bg-white/10 backdrop-blur-sm rounded-md border border-white/15"
+                  className="flex items-center gap-2 p-3 bg-white/10 backdrop-blur-sm rounded-md border border-white/15"
                   data-testid={`area-${area.name.toLowerCase()}`}
                 >
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-3.5 h-3.5 text-white/90 flex-shrink-0" />
-                    <span className="text-sm font-medium text-white">{area.name}</span>
-                  </div>
-                  <span className="text-xs text-white/70 whitespace-nowrap">{area.distance}</span>
+                  <MapPin className="w-3.5 h-3.5 text-white/90 flex-shrink-0" />
+                  <span className="text-sm font-medium text-white">{area.name}</span>
                 </div>
               ))}
             </div>
