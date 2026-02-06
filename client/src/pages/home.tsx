@@ -17,6 +17,7 @@ import {
   MapPin,
   Star
 } from "lucide-react";
+import heroImage from "@/assets/images/hero-plumber.png";
 
 const SERVICES = [
   {
@@ -72,27 +73,31 @@ export default function HomePage() {
         ]}
       />
 
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <section className="relative min-h-[85vh] flex items-center">
+        <img
+          src={heroImage}
+          alt="Professionele loodgieter aan het werk in Nijmegen"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-8 border border-white/20">
               <Clock className="w-4 h-4" />
               <span>24/7 Spoedservice Beschikbaar</span>
             </div>
             
             <h1 
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-white drop-shadow-lg"
               data-testid="text-hero-title"
             >
               Loodgieter Nijmegen &amp; Arnhem - Snel ter Plaatse
             </h1>
             
             <p 
-              className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+              className="text-lg sm:text-xl text-white/85 max-w-2xl mb-10 leading-relaxed"
               data-testid="text-hero-subtitle"
             >
               Al meer dan 30 jaar uw betrouwbare loodgieter in de regio Arnhem-Nijmegen. 
@@ -100,7 +105,7 @@ export default function HomePage() {
               Vakkundig en snel geholpen.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-start gap-4">
               <a href="tel:+31241234567" data-testid="button-hero-call">
                 <Button size="lg" className="gap-2 min-w-[200px]">
                   <Phone className="w-5 h-5" />
@@ -108,24 +113,24 @@ export default function HomePage() {
                 </Button>
               </a>
               <Link href="/diensten" data-testid="button-hero-services">
-                <Button size="lg" variant="outline" className="gap-2 min-w-[200px]">
+                <Button size="lg" variant="outline" className="gap-2 min-w-[200px] bg-white/10 backdrop-blur-sm border-white/30 text-white">
                   Bekijk Onze Diensten
                   <ChevronRight className="w-5 h-5" />
                 </Button>
               </Link>
             </div>
             
-            <div className="flex items-center justify-center gap-8 mt-12 pt-8 border-t border-border/50 flex-wrap">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Shield className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-8 mt-12 pt-8 border-t border-white/20 flex-wrap">
+              <div className="flex items-center gap-2 text-white/80">
+                <Shield className="w-5 h-5 text-white" />
                 <span className="text-sm font-medium">Gecertificeerd</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Award className="w-5 h-5 text-primary" />
+              <div className="flex items-center gap-2 text-white/80">
+                <Award className="w-5 h-5 text-white" />
                 <span className="text-sm font-medium">30+ Jaar Ervaring</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Users className="w-5 h-5 text-primary" />
+              <div className="flex items-center gap-2 text-white/80">
+                <Users className="w-5 h-5 text-white" />
                 <span className="text-sm font-medium">1000+ Klanten</span>
               </div>
             </div>
