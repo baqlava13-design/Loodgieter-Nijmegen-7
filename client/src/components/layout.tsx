@@ -41,7 +41,7 @@ function Header() {
               <Link 
                 key={link.href}
                 href={link.href} 
-                className={`text-sm font-medium transition-opacity ${location === link.href ? 'text-primary' : 'text-muted-foreground hover:opacity-70'}`}
+                className={`text-sm font-medium transition-opacity ${location === link.href ? 'text-foreground' : 'text-muted-foreground hover:opacity-70'}`}
                 data-testid={`link-nav-${link.label.toLowerCase()}`}
               >
                 {link.label}
@@ -75,7 +75,7 @@ function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block py-3 text-sm font-medium ${location === link.href ? 'text-primary' : 'text-muted-foreground'}`}
+                className={`block py-3 text-sm font-medium ${location === link.href ? 'text-foreground' : 'text-muted-foreground'}`}
                 onClick={() => setMobileMenuOpen(false)}
                 data-testid={`link-mobile-${link.label.toLowerCase()}`}
               >

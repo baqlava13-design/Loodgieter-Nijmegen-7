@@ -1,39 +1,11 @@
 import { z } from "zod";
 
-export const wordPressPageSchema = z.object({
-  id: z.number(),
-  slug: z.string(),
-  title: z.object({
-    rendered: z.string(),
-  }),
-  content: z.object({
-    rendered: z.string(),
-  }),
-  excerpt: z.object({
-    rendered: z.string(),
-  }),
+export const contactFormSchema = z.object({
+  name: z.string().min(1, "Naam is verplicht"),
+  email: z.string().email("Ongeldig e-mailadres"),
+  phone: z.string().optional(),
+  subject: z.string().optional(),
+  message: z.string().min(1, "Bericht is verplicht"),
 });
 
-export type WordPressPage = z.infer<typeof wordPressPageSchema>;
-
-export interface Service {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-export interface Feature {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-export interface LandingPageContent {
-  heroTitle: string;
-  heroSubtitle: string;
-  aboutTitle: string;
-  aboutDescription: string;
-  services: Service[];
-  features: Feature[];
-  contactImage: string;
-}
+export type ContactForm = z.infer<typeof contactFormSchema>;
