@@ -55,7 +55,6 @@ const SERVICE_AREAS = [
 ];
 
 const TRUST_POINTS = [
-  "Gecertificeerd en verzekerd",
   "Transparante prijzen, geen verrassingen",
   "Binnen 30 minuten ter plaatse bij spoed",
   "Gratis telefonisch advies",
