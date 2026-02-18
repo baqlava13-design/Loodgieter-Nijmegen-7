@@ -24,20 +24,20 @@ import heroMapImage from "@/assets/images/hero-map-arnhem.png";
 const SERVICES = [
   {
     icon: Droplet,
-    title: "Lekkage Oplossen",
-    description: "Snelle opsporing en reparatie van lekkages aan leidingen, kranen en verwarmingssystemen in Nijmegen en Arnhem.",
-    slug: "lekkage-oplossen"
+    title: "Lekkage Reparatie",
+    description: "Reparatie en vervanging van lekkende leidingen, kranen en waterleidingen in Nijmegen en Arnhem.",
+    slug: "lekkage-reparatie"
   },
   {
     icon: Thermometer,
-    title: "CV-ketel Onderhoud",
-    description: "Professioneel onderhoud, reparatie en installatie van cv-ketels. Voorkom storingen en bespaar op energiekosten.",
-    slug: "cv-ketel-onderhoud"
+    title: "CV-ketel Reparatie & Vervanging",
+    description: "Reparatie en vervanging van cv-ketels en onderdelen. Ketel renovatie en nieuwe installatie.",
+    slug: "cv-ketel-reparatie"
   },
   {
     icon: Wrench,
     title: "Verstoppingen Verhelpen",
-    description: "Grondige ontstopping van afvoeren, toiletten en rioleringen met moderne apparatuur en technieken.",
+    description: "Ontstopping van afvoeren, toiletten, gootstenen en rioleringen op elke plek in en om het huis.",
     slug: "verstoppingen-verhelpen"
   },
   {
@@ -67,7 +67,7 @@ export default function HomePage() {
     <Layout>
       <SEO
         title="Loodgieter Nijmegen Spoed | 24/7 Spoedservice | 30+ Jaar Ervaring"
-        description="Professionele loodgieter in Nijmegen en Arnhem. 24/7 spoedservice voor lekkages, CV-ketel onderhoud en verstoppingen. 30+ jaar ervaring. Bel direct: 024-123 4567."
+        description="Professionele loodgieter in Nijmegen en Arnhem. 24/7 spoedservice voor lekkages, CV-ketel reparatie en vervanging, en verstoppingen. 30+ jaar ervaring. Bel direct: 024-123 4567."
         canonical="/"
         breadcrumbs={[
           { name: "Home", url: "/" }
@@ -102,7 +102,7 @@ export default function HomePage() {
               data-testid="text-hero-subtitle"
             >
               Al meer dan 30 jaar uw betrouwbare loodgieter in de regio Arnhem-Nijmegen. 
-              Spoedservice, lekkage reparatie, CV-ketel onderhoud en ontstoppingen. 
+              Spoedservice, lekkage reparatie, CV-ketel reparatie en vervanging, en ontstoppingen. 
               Vakkundig en snel geholpen.
             </p>
             
@@ -155,7 +155,7 @@ export default function HomePage() {
       <section className="relative py-20 sm:py-28" id="diensten">
         <img
           src={heroDienstenImage}
-          alt="Overzicht loodgietersdiensten Nijmegen - ontstopping, lekkage reparatie en CV ketel onderhoud in regio Arnhem-Nijmegen"
+          alt="Overzicht loodgietersdiensten Nijmegen - ontstopping, lekkage reparatie en CV ketel reparatie in regio Arnhem-Nijmegen"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
@@ -166,7 +166,7 @@ export default function HomePage() {
               Onze Loodgietersdiensten in Arnhem-Nijmegen
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              Van spoedklussen tot gepland onderhoud: wij bieden een compleet pakket loodgietersdiensten voor particulieren en bedrijven.
+              Van spoedklussen tot reparaties en vervangingen: wij bieden een compleet pakket loodgietersdiensten voor particulieren en bedrijven.
             </p>
           </div>
           
@@ -306,7 +306,7 @@ export default function HomePage() {
               {
                 name: "Maria Jansen",
                 location: "Arnhem",
-                text: "Uitstekende service voor ons CV-ketel onderhoud. Duidelijke uitleg over wat er gedaan is en een eerlijke prijs.",
+                text: "Uitstekende service voor de reparatie van onze CV-ketel. Duidelijke uitleg over wat er gedaan is en een eerlijke prijs.",
                 rating: 5
               },
               {

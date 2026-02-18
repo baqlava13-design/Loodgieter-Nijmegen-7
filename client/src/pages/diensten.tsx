@@ -11,7 +11,6 @@ import {
   Phone,
   ChevronRight,
   ShowerHead,
-  PipetteIcon,
   Flame,
   CheckCircle
 } from "lucide-react";
@@ -21,46 +20,46 @@ import bgToolsPattern from "@/assets/images/bg-tools-pattern.png";
 const DETAILED_SERVICES = [
   {
     icon: Droplet,
-    title: "Lekkage Oplossen in Nijmegen en Arnhem",
-    shortTitle: "Lekkage Oplossen",
-    description: "Een lekkage kan grote schade veroorzaken aan uw woning als deze niet snel wordt verholpen. Onze ervaren loodgieters in Nijmegen en Arnhem zijn gespecialiseerd in het opsporen en repareren van alle soorten lekkages.",
+    title: "Lekkage Reparatie en Vervanging in Nijmegen en Arnhem",
+    shortTitle: "Lekkage Reparatie",
+    description: "Een lekkage kan grote schade veroorzaken aan uw woning als deze niet snel wordt verholpen. Onze ervaren loodgieters in Nijmegen en Arnhem repareren en vervangen alle soorten lekkende leidingen en kranen.",
     details: [
       "Lekkende kranen en leidingen repareren",
-      "Waterleiding lekkages opsporen met detectieapparatuur",
+      "Waterleidingen vervangen en vernieuwen",
       "Lekkage aan cv-leidingen en radiatoren",
-      "Daklekkages en gootproblemen",
-      "Vochtproblemen en condensatie verhelpen",
+      "Gasleidingen repareren en vervangen",
+      "Leidingwerk vernieuwen en renoveren",
       "Noodservice bij wateroverlast"
     ],
     cta: "Heeft u een lekkage? Bel direct voor snelle hulp in Nijmegen en omgeving."
   },
   {
     icon: Thermometer,
-    title: "CV-ketel Onderhoud en Reparatie",
-    shortTitle: "CV-ketel Onderhoud",
-    description: "Regelmatig onderhoud van uw cv-ketel voorkomt storingen en bespaart energie. Onze monteurs in de regio Arnhem-Nijmegen verzorgen professioneel onderhoud, reparatie en installatie van alle merken cv-ketels.",
+    title: "CV-ketel Reparatie en Vervanging",
+    shortTitle: "CV-ketel Reparatie",
+    description: "Onze loodgieters in de regio Arnhem-Nijmegen verzorgen reparaties aan uw cv-ketel, vervangen onderdelen en plaatsen nieuwe ketels. Wij werken aan alle merken cv-ketels.",
     details: [
-      "Jaarlijks cv-ketel onderhoud en inspectie",
+      "Cv-ketel onderdelen vervangen",
       "Storingen en foutcodes verhelpen",
-      "Cv-ketel vervangen en installeren",
-      "Vloerverwarming installatie en onderhoud",
+      "Cv-ketel vervangen en installeren (renovatie)",
       "Radiatoren bijvullen en ontluchten",
-      "Thermostaat installatie en programmering"
+      "Cv-leidingen repareren en vervangen",
+      "Rookgasafvoer plaatsen en repareren"
     ],
-    cta: "Plan nu uw cv-ketel onderhoud in en voorkom storingen dit seizoen."
+    cta: "Problemen met uw cv-ketel? Bel ons voor snelle reparatie of vervanging."
   },
   {
     icon: Wrench,
     title: "Verstoppingen Verhelpen",
     shortTitle: "Ontstopping",
-    description: "Een verstopte afvoer of riool is hinderlijk en kan tot grotere problemen leiden. Onze loodgieters in Nijmegen en Arnhem gebruiken professionele apparatuur voor snelle en grondige ontstopping.",
+    description: "Een verstopte afvoer of riool is hinderlijk en kan tot grotere problemen leiden. Onze loodgieters in Nijmegen en Arnhem verhelpen verstoppingen op elke plek in en om het huis.",
     details: [
       "Afvoer en gootsteen ontstoppen",
       "Toilet en badkamer verstoppingen",
-      "Riool inspectie met camera",
-      "Hogedrukreiniging van rioleringen",
-      "Preventief rioolonderhoud",
-      "Wortelingroei in riool verwijderen"
+      "Riool ontstoppen",
+      "Regenpijp en dakgoot verstoppingen",
+      "Buitenriolering ontstoppen",
+      "Alle locaties in en om het huis"
     ],
     cta: "Last van een verstopping? Onze loodgieters zijn snel ter plaatse in de regio Arnhem-Nijmegen."
   },
@@ -74,40 +73,24 @@ const DETAILED_SERVICES = [
       "Gemiddeld binnen 30 minuten ter plaatse",
       "Gesprongen waterleidingen",
       "Gaslekkages (bel eerst 0800-9009)",
-      "Overstromingen en wateroverlast",
-      "Geen extra toeslag in het weekend"
+      "Overstromingen en wateroverlast"
     ],
     cta: "Spoed? Bel nu direct: 024-123 4567. Wij zijn 24/7 bereikbaar."
   },
   {
     icon: ShowerHead,
-    title: "Sanitair Installatie en Reparatie",
+    title: "Sanitair Reparatie en Vervanging",
     shortTitle: "Sanitair",
-    description: "Van een nieuwe badkamer tot het vervangen van een kraan: onze loodgieters verzorgen de complete sanitairinstallatie en -reparatie voor woningen en bedrijfspanden in de regio Arnhem-Nijmegen.",
+    description: "Onze loodgieters verzorgen reparaties en vervanging van sanitair voor woningen en bedrijfspanden in de regio Arnhem-Nijmegen. Van toilet tot keuken en douche.",
     details: [
-      "Badkamer renovatie en installatie",
-      "Toilet installatie en reparatie",
-      "Kranen vervangen en installeren",
+      "Toilet reparatie en vervanging",
+      "Douche reparatie en aansluiting",
+      "Keuken kranen en aansluitingen vervangen",
       "Wasmachine en vaatwasser aansluiting",
-      "Boiler installatie en onderhoud",
-      "Waterdruk problemen oplossen"
+      "Dakdoorvoeren plaatsen en repareren",
+      "Rookgasafvoer installatie en reparatie"
     ],
-    cta: "Een nieuwe badkamer of sanitairreparatie nodig? Vraag een vrijblijvende offerte aan."
-  },
-  {
-    icon: PipetteIcon,
-    title: "Rioolreparatie en -onderhoud",
-    shortTitle: "Rioolwerk",
-    description: "Problemen met het riool kunnen leiden tot stankoverlast en waterschade. Onze specialisten in Nijmegen en Arnhem bieden professionele rioolinspectie, -reparatie en -vervanging.",
-    details: [
-      "Riool inspectie met camera",
-      "Rioolreparatie en -vervanging",
-      "Drainage aanleg en onderhoud",
-      "Putdeksels en kolken reinigen",
-      "Riool aansluiting nieuwbouw",
-      "Preventief rioolonderhoud"
-    ],
-    cta: "Rioolproblemen? Laat uw riool inspecteren door onze specialisten."
+    cta: "Sanitair reparatie of vervanging nodig? Vraag een vrijblijvende offerte aan."
   }
 ];
 
@@ -131,7 +114,7 @@ export default function DienstenPage() {
     <Layout>
       <SEO
         title="Loodgietersdiensten Nijmegen & Arnhem | Lekkage, CV-ketel, Ontstopping"
-        description="Alle loodgietersdiensten in Nijmegen en Arnhem: lekkage oplossen, CV-ketel onderhoud, verstoppingen, sanitair installatie en 24/7 spoedservice. 30+ jaar ervaring. Bel: 024-123 4567."
+        description="Alle loodgietersdiensten in Nijmegen en Arnhem: lekkage reparatie, CV-ketel reparatie en vervanging, verstoppingen verhelpen, sanitair en 24/7 spoedservice. 30+ jaar ervaring. Bel: 024-123 4567."
         canonical="/diensten"
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -162,7 +145,7 @@ export default function DienstenPage() {
             </h1>
             <p className="text-lg text-white/85 leading-relaxed">
               Wij bieden een compleet pakket professionele loodgietersdiensten voor particulieren en bedrijven 
-              in de regio Arnhem-Nijmegen. Van spoedklussen tot gepland onderhoud - altijd vakkundig en betrouwbaar.
+              in de regio Arnhem-Nijmegen. Van spoedklussen tot reparaties en vervangingen - altijd vakkundig en betrouwbaar.
             </p>
           </div>
         </div>
@@ -246,7 +229,7 @@ export default function DienstenPage() {
                 },
                 {
                   q: "Werken jullie ook in het weekend en 's avonds?",
-                  a: "Ja, onze spoedservice is 24/7 beschikbaar, ook in het weekend en op feestdagen. Wij rekenen geen extra toeslag voor weekendwerk bij spoedklussen."
+                  a: "Ja, onze spoedservice is 24/7 beschikbaar, ook in het weekend en op feestdagen."
                 },
                 {
                   q: "Welke gebieden bedienen jullie naast Nijmegen?",

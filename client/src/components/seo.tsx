@@ -20,7 +20,7 @@ export function SEO({ title, description, canonical, ogType = "website", breadcr
     "@type": "LocalBusiness",
     "@id": `${BASE_URL}/#organization`,
     "name": "Loodgieter Nijmegen Spoed",
-    "description": "Professionele loodgieterservice in Nijmegen en Arnhem. 24/7 spoedservice, lekkage oplossen, CV-ketel onderhoud en verstoppingen verhelpen. 30+ jaar ervaring.",
+    "description": "Professionele loodgieterservice in Nijmegen en Arnhem. 24/7 spoedservice, lekkage reparatie, CV-ketel reparatie en vervanging, en verstoppingen verhelpen. 30+ jaar ervaring.",
     "url": BASE_URL,
     "telephone": "+31-24-123-4567",
     "email": "info@loodgieternijmegen.net",

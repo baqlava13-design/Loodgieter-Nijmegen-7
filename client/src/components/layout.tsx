@@ -122,12 +122,12 @@ function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/diensten" className="text-muted-foreground hover:opacity-70" data-testid="link-footer-lekkage">
-                  Lekkage oplossen
+                  Lekkage reparatie
                 </Link>
               </li>
               <li>
                 <Link href="/diensten" className="text-muted-foreground hover:opacity-70" data-testid="link-footer-cvketel">
-                  CV-ketel onderhoud
+                  CV-ketel reparatie
                 </Link>
               </li>
               <li>
@@ -142,12 +142,12 @@ function Footer() {
               </li>
               <li>
                 <Link href="/diensten" className="text-muted-foreground hover:opacity-70" data-testid="link-footer-sanitair">
-                  Sanitair installatie
+                  Sanitair reparatie
                 </Link>
               </li>
               <li>
                 <Link href="/diensten" className="text-muted-foreground hover:opacity-70" data-testid="link-footer-riolering">
-                  Rioolreparatie
+                  Riool ontstoppen
                 </Link>
               </li>
             </ul>

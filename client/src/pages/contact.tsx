@@ -176,7 +176,7 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Type probleem</FormLabel>
                           <FormControl>
-                            <Input placeholder="Bijv. lekkage, verstopping, cv-ketel storing" {...field} data-testid="input-subject" />
+                            <Input placeholder="Bijv. lekkage reparatie, verstopping, cv-ketel reparatie" {...field} data-testid="input-subject" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
