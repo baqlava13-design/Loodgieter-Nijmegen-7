@@ -124,10 +124,6 @@ export default function HomePage() {
             
             <div className="flex items-center gap-8 mt-12 pt-8 border-t border-white/20 flex-wrap">
               <div className="flex items-center gap-2 text-white/80">
-                <Shield className="w-5 h-5 text-white" />
-                <span className="text-sm font-medium">Gecertificeerd</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/80">
                 <Award className="w-5 h-5 text-white" />
                 <span className="text-sm font-medium">30+ Jaar Ervaring</span>
               </div>
