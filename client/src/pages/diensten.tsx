@@ -14,8 +14,8 @@ import {
   Flame,
   CheckCircle
 } from "lucide-react";
-import heroImage from "@/assets/images/hero-diensten.png";
-import bgToolsPattern from "@/assets/images/bg-tools-pattern.png";
+import heroImage from "@/assets/images/hero-diensten.webp";
+import bgToolsPattern from "@/assets/images/bg-tools-pattern.webp";
 
 const DETAILED_SERVICES = [
   {
@@ -128,6 +128,10 @@ export default function DienstenPage() {
           src={heroImage}
           alt="Alle loodgietersdiensten Nijmegen - professionele loodgieter voert reparatie uit aan waterleiding in Arnhem-Nijmegen regio"
           className="absolute inset-0 w-full h-full object-cover"
+          {...{ fetchpriority: "high" } as any}
+          decoding="async"
+          width={1408}
+          height={768}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />

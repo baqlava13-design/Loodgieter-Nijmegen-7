@@ -19,8 +19,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import heroContactImage from "@/assets/images/hero-contact.png";
-import heroMapImage from "@/assets/images/hero-map-arnhem.png";
+import heroContactImage from "@/assets/images/hero-contact.webp";
+import heroMapImage from "@/assets/images/hero-map-arnhem.webp";
 
 const SERVICE_AREAS_DETAILED = [
   { name: "Nijmegen", distance: "Binnen 15 min" },
@@ -95,6 +95,10 @@ export default function ContactPage() {
           src={heroContactImage}
           alt="Loodgieter Nijmegen servicewagen - spoed loodgietersbusje onderweg naar klant voor snelle hulp in Nijmegen en omgeving"
           className="absolute inset-0 w-full h-full object-cover"
+          {...{ fetchpriority: "high" } as any}
+          decoding="async"
+          width={1408}
+          height={768}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
@@ -302,6 +306,10 @@ export default function ContactPage() {
           src={heroMapImage}
           alt="Werkgebied loodgieter Nijmegen - kaart met servicegebied Arnhem, Nijmegen, Elst, Wijchen, Bemmel, Druten en regio Gelderland"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          width={1408}
+          height={768}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
 

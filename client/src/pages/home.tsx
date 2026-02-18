@@ -17,9 +17,9 @@ import {
   MapPin,
   Star
 } from "lucide-react";
-import heroImage from "@/assets/images/hero-plumber.png";
-import heroDienstenImage from "@/assets/images/hero-diensten.png";
-import heroMapImage from "@/assets/images/hero-map-arnhem.png";
+import heroImage from "@/assets/images/hero-plumber.webp";
+import heroDienstenImage from "@/assets/images/hero-diensten.webp";
+import heroMapImage from "@/assets/images/hero-map-arnhem.webp";
 
 const SERVICES = [
   {
@@ -79,6 +79,10 @@ export default function HomePage() {
           src={heroImage}
           alt="Loodgieter Nijmegen spoed - ervaren loodgieter repareert lekkage bij spoedklus in Nijmegen, 24 uur per dag beschikbaar"
           className="absolute inset-0 w-full h-full object-cover"
+          {...{ fetchpriority: "high" } as any}
+          decoding="async"
+          width={1408}
+          height={768}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
@@ -157,6 +161,10 @@ export default function HomePage() {
           src={heroDienstenImage}
           alt="Overzicht loodgietersdiensten Nijmegen - ontstopping, lekkage reparatie en CV ketel reparatie in regio Arnhem-Nijmegen"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          width={1408}
+          height={768}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
 
@@ -248,6 +256,10 @@ export default function HomePage() {
           src={heroMapImage}
           alt="Werkgebied loodgieter Nijmegen - serviceregio kaart Arnhem, Nijmegen, Elst, Wijchen, Bemmel en omliggende plaatsen in Gelderland"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+          width={1408}
+          height={768}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/65 to-black/75" />
 
