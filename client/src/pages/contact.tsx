@@ -17,8 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema, type ContactForm } from "@shared/schema";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
+import { useState } from "react";
 import heroContactImage from "@/assets/images/hero-contact.webp";
 import heroMapImage from "@/assets/images/hero-map-arnhem.webp";
 
@@ -40,8 +39,11 @@ const SERVICE_AREAS_DETAILED = [
   { name: "Oosterbeek", distance: "Binnen 30 min" },
 ];
 
+const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+
 export default function ContactPage() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactForm>({
     resolver: zodResolver(contactFormSchema),
@@ -54,28 +56,41 @@ export default function ContactPage() {
     }
   });
 
-  const mutation = useMutation({
-    mutationFn: async (data: ContactForm) => {
-      await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Bericht verzonden",
-        description: "Wij nemen zo snel mogelijk contact met u op.",
+  const onSubmit = async (data: ContactForm) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: data.name,
+          email: data.email,
+          phone: data.phone || "",
+          subject: data.subject || "Contactformulier Loodgieter Nijmegen",
+          message: data.message,
+          from_name: "Loodgieter Nijmegen Website",
+        }),
       });
-      form.reset();
-    },
-    onError: () => {
+      const result = await response.json();
+      if (result.success) {
+        toast({
+          title: "Bericht verzonden",
+          description: "Wij nemen zo snel mogelijk contact met u op.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch {
       toast({
         title: "Er is iets misgegaan",
         description: "Probeer het opnieuw of bel ons direct.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
-  });
-
-  const onSubmit = (data: ContactForm) => {
-    mutation.mutate(data);
   };
 
   return (
@@ -210,11 +225,11 @@ export default function ContactPage() {
                       type="submit" 
                       className="w-full gap-2" 
                       size="lg" 
-                      disabled={mutation.isPending}
+                      disabled={isSubmitting}
                       data-testid="button-submit"
                     >
                       <Send className="w-4 h-4" />
-                      {mutation.isPending ? "Verzenden..." : "Bericht Verzenden"}
+                      {isSubmitting ? "Verzenden..." : "Bericht Verzenden"}
                     </Button>
                     
                     <p className="text-xs text-muted-foreground text-center">
