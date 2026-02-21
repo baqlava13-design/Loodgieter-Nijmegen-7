@@ -39,8 +39,6 @@ const SERVICE_AREAS_DETAILED = [
   { name: "Oosterbeek", distance: "Binnen 30 min" },
 ];
 
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
-
 export default function ContactPage() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,19 +57,10 @@ export default function ContactPage() {
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          name: data.name,
-          email: data.email,
-          phone: data.phone || "",
-          subject: data.subject || "Contactformulier Loodgieter Nijmegen",
-          message: data.message,
-          from_name: "Loodgieter Nijmegen Website",
-          to: "contact@loodgieternijmegen.net",
-        }),
+        body: JSON.stringify(data),
       });
       const result = await response.json();
       if (result.success) {
