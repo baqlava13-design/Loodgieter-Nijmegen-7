@@ -256,8 +256,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">E-mail</h3>
-                    <a href="mailto:info@loodgieternijmegen.net" className="text-primary hover:underline" data-testid="link-contact-email">
-                      info@loodgieternijmegen.net
+                    <a href="mailto:contact@loodgieternijmegen.net" className="text-primary hover:underline" data-testid="link-contact-email">
+                      contact@loodgieternijmegen.net
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">Reactie binnen 2 uur op werkdagen</p>
                   </div>

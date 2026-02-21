@@ -110,9 +110,9 @@ function Footer() {
                 <Phone className="w-4 h-4 text-primary" />
                 06 22308923
               </a>
-              <a href="mailto:info@loodgieternijmegen.net" className="flex items-center gap-2 text-muted-foreground hover:opacity-70" data-testid="link-footer-email">
+              <a href="mailto:contact@loodgieternijmegen.net" className="flex items-center gap-2 text-muted-foreground hover:opacity-70" data-testid="link-footer-email">
                 <Mail className="w-4 h-4 text-primary" />
-                info@loodgieternijmegen.net
+                contact@loodgieternijmegen.net
               </a>
             </div>
           </div>
