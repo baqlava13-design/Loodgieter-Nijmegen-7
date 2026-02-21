@@ -67,7 +67,7 @@ export default function HomePage() {
     <Layout>
       <SEO
         title="Loodgieter Nijmegen Spoed | 24/7 Spoedservice | 30+ Jaar Ervaring"
-        description="Professionele loodgieter in Nijmegen en Arnhem. 24/7 spoedservice voor lekkages, CV-ketel reparatie en vervanging, en verstoppingen. 30+ jaar ervaring. Bel direct: 024-123 4567."
+        description="Professionele loodgieter in Nijmegen en Arnhem. 24/7 spoedservice voor lekkages, CV-ketel reparatie en vervanging, en verstoppingen. 30+ jaar ervaring. Bel direct: 06 22308923."
         canonical="/"
         breadcrumbs={[
           { name: "Home", url: "/" }
@@ -111,10 +111,10 @@ export default function HomePage() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <a href="tel:+31241234567" data-testid="button-hero-call">
+              <a href="tel:+31622308923" data-testid="button-hero-call">
                 <Button size="lg" className="gap-2 min-w-[200px]">
                   <Phone className="w-5 h-5" />
-                  Bel Direct: 024-123 4567
+                  Bel Direct: 06 22308923
                 </Button>
               </a>
               <Link href="/diensten" data-testid="button-hero-services">
@@ -356,10 +356,10 @@ export default function HomePage() {
               Bel direct of vraag online een offerte aan.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="tel:+31241234567" data-testid="button-cta-call">
+              <a href="tel:+31622308923" data-testid="button-cta-call">
                 <Button size="lg" className="gap-2">
                   <Phone className="w-5 h-5" />
-                  024-123 4567
+                  06 22308923
                 </Button>
               </a>
               <Link href="/contact" data-testid="button-cta-contact">

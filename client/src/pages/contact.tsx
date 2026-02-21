@@ -70,6 +70,7 @@ export default function ContactPage() {
           subject: data.subject || "Contactformulier Loodgieter Nijmegen",
           message: data.message,
           from_name: "Loodgieter Nijmegen Website",
+          to: "contact@loodgieternijmegen.net",
         }),
       });
       const result = await response.json();
@@ -96,8 +97,8 @@ export default function ContactPage() {
   return (
     <Layout>
       <SEO
-        title="Contact Loodgieter Nijmegen | Bel 024-123 4567 | 24/7 Bereikbaar"
-        description="Neem contact op met Loodgieter Nijmegen Spoed. Bel 024-123 4567 voor directe hulp. 24/7 bereikbaar voor spoedklussen in Nijmegen, Arnhem en omgeving. Gratis offerte aanvragen."
+        title="Contact Loodgieter Nijmegen | Bel 06 22308923 | 24/7 Bereikbaar"
+        description="Neem contact op met Loodgieter Nijmegen Spoed. Bel 06 22308923 voor directe hulp. 24/7 bereikbaar voor spoedklussen in Nijmegen, Arnhem en omgeving. Gratis offerte aanvragen."
         canonical="/contact"
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -234,7 +235,7 @@ export default function ContactPage() {
                     
                     <p className="text-xs text-muted-foreground text-center">
                       Wij reageren doorgaans binnen 30 minuten tijdens werkuren. 
-                      Voor spoed: bel direct <a href="tel:+31241234567" className="text-primary hover:underline">024-123 4567</a>.
+                      Voor spoed: bel direct <a href="tel:+31622308923" className="text-primary hover:underline">06 22308923</a>.
                     </p>
                   </form>
                 </Form>
@@ -251,8 +252,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Bel Ons Direct</h3>
-                    <a href="tel:+31241234567" className="text-lg font-bold text-primary hover:underline" data-testid="link-contact-phone">
-                      024-123 4567
+                    <a href="tel:+31622308923" className="text-lg font-bold text-primary hover:underline" data-testid="link-contact-phone">
+                      06 22308923
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">24/7 bereikbaar voor spoedgevallen</p>
                   </div>
@@ -403,10 +404,10 @@ export default function ContactPage() {
               Bij waterlekkages, verstoppingen of andere spoedgevallen zijn wij binnen 30 minuten 
               bij u in Nijmegen, Arnhem en omgeving.
             </p>
-            <a href="tel:+31241234567" data-testid="button-contact-cta-call">
+            <a href="tel:+31622308923" data-testid="button-contact-cta-call">
               <Button size="lg" className="gap-2">
                 <Phone className="w-5 h-5" />
-                Bel Nu: 024-123 4567
+                Bel Nu: 06 22308923
               </Button>
             </a>
           </div>

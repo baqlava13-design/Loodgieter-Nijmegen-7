@@ -75,7 +75,7 @@ const DETAILED_SERVICES = [
       "Gaslekkages (bel eerst 0800-9009)",
       "Overstromingen en wateroverlast"
     ],
-    cta: "Spoed? Bel nu direct: 024-123 4567. Wij zijn 24/7 bereikbaar."
+    cta: "Spoed? Bel nu direct: 06 22308923. Wij zijn 24/7 bereikbaar."
   },
   {
     icon: ShowerHead,
@@ -114,7 +114,7 @@ export default function DienstenPage() {
     <Layout>
       <SEO
         title="Loodgietersdiensten Nijmegen & Arnhem | Lekkage, CV-ketel, Ontstopping"
-        description="Alle loodgietersdiensten in Nijmegen en Arnhem: lekkage reparatie, CV-ketel reparatie en vervanging, verstoppingen verhelpen, sanitair en 24/7 spoedservice. 30+ jaar ervaring. Bel: 024-123 4567."
+        description="Alle loodgietersdiensten in Nijmegen en Arnhem: lekkage reparatie, CV-ketel reparatie en vervanging, verstoppingen verhelpen, sanitair en 24/7 spoedservice. 30+ jaar ervaring. Bel: 06 22308923."
         canonical="/diensten"
         breadcrumbs={[
           { name: "Home", url: "/" },
@@ -192,7 +192,7 @@ export default function DienstenPage() {
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-6 border-t border-border/50">
                       <p className="text-sm text-muted-foreground flex-1">{service.cta}</p>
                       <div className="flex gap-2">
-                        <a href="tel:+31241234567">
+                        <a href="tel:+31622308923">
                           <Button size="sm" className="gap-2">
                             <Phone className="w-4 h-4" />
                             Bel Nu
@@ -261,10 +261,10 @@ export default function DienstenPage() {
               voor particulieren en bedrijven in Nijmegen, Arnhem en omgeving.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="tel:+31241234567" data-testid="button-diensten-call">
+              <a href="tel:+31622308923" data-testid="button-diensten-call">
                 <Button size="lg" className="gap-2">
                   <Phone className="w-5 h-5" />
-                  024-123 4567
+                  06 22308923
                 </Button>
               </a>
               <Link href="/contact" data-testid="button-diensten-contact">

@@ -50,7 +50,7 @@ function Header() {
           </nav>
           
           <div className="flex items-center gap-2">
-            <a href="tel:+31241234567" data-testid="button-call-header">
+            <a href="tel:+31622308923" data-testid="button-call-header">
               <Button size="sm" className="gap-2">
                 <Phone className="w-4 h-4" />
                 <span className="hidden sm:inline">Bel Nu</span>
@@ -106,9 +106,9 @@ function Footer() {
               24/7 spoedservice beschikbaar voor al uw loodgietersproblemen.
             </p>
             <div className="flex flex-col gap-2 text-sm">
-              <a href="tel:+31241234567" className="flex items-center gap-2 text-muted-foreground hover:opacity-70" data-testid="link-footer-phone">
+              <a href="tel:+31622308923" className="flex items-center gap-2 text-muted-foreground hover:opacity-70" data-testid="link-footer-phone">
                 <Phone className="w-4 h-4 text-primary" />
-                024-123 4567
+                06 22308923
               </a>
               <a href="mailto:info@loodgieternijmegen.net" className="flex items-center gap-2 text-muted-foreground hover:opacity-70" data-testid="link-footer-email">
                 <Mail className="w-4 h-4 text-primary" />
